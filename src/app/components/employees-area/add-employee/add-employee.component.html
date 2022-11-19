@@ -1,0 +1,30 @@
+<div class="box">
+    <form #myForm="ngForm" (submit)="send()">
+
+        <label>שם פרטי:</label>
+        <input #firstNameBox="ngModel" type="text" [(ngModel)]="employee.firstName" name="firstName" required pattern="^[A-Z].*$"[(ngModel)]="employee.firstName" name="firstName" required pattern="^[A-Z].*$">
+        <span *ngIf="firstNameBox.errors?.required && firstNameBox.touched">Missing First Name.</span>
+        <span *ngIf="firstNameBox.errors?.pattern && firstNameBox.touched">First Name must start with a Capital Latter.</span>
+
+        <label>שם משפחה:</label>
+        <input #lastNameBox="ngModel" type="text" [(ngModel)]="employee.lastName" name="lastName" required pattern="^[A-Z].*$">
+        <span *ngIf="lastNameBox.errors?.required && lastNameBox.touched">Missing Last Name.</span>
+        <span *ngIf="lastNameBox.errors?.pattern && lastNameBox.touched">Last Name must start with a Capital Latter.</span>
+
+        <label>טייטל:</label>
+        <input #title="ngModel" type="text" [(ngModel)]="employee.title" name="title" required pattern="^[A-Z].*$">
+        <span *ngIf="title.errors?.required && title.touched">Missing Title.</span>
+        <span *ngIf="title.errors?.pattern && title.touched">Title must start with a Capital Latter.</span>
+
+        <label>תאריך לידה:</label>
+        <input #birthDate="ngModel" type="date" name="birthDate" [(ngModel)]="employee.birthDate" name="birthDate" required>
+        <span *ngIf="title.errors?.required && title.touched">Missing BirthDate.</span>
+        
+        <label>תמונה: </label>
+        <input type="file" accept="image/*" (change)="saveImage($event)" (blur)="imageBlur()" required >
+        <span *ngIf="imageBlur && employee.image">missing Image.</span>
+
+        <button [disabled]="myForm.form.invalid">Add</button>
+
+    </form>
+</div>

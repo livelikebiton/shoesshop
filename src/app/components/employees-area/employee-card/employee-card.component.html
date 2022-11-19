@@ -1,0 +1,16 @@
+<div class="box">
+    <div id="{{employee.employeeId}}">
+        <a routerLink="/employees/edit/{{employee.employeeId}}">ערוך</a>
+        <span> | </span>
+        <a routerLink="javascript:void" (click)="delete()">מחק</a>
+        <p>
+            {{employee.firstName}} {{employee.lastName}}
+            <br />
+            {{employee.title}}
+            <br />
+            {{employee.birthDate}}
+            <br />
+        </p>
+        <img [src]="imageUrl + employee.imageName" />
+    </div>
+</div>

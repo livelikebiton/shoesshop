@@ -1,0 +1,31 @@
+<div class="box">
+
+    <form (submit)="update()" [formGroup]="employeeForm">
+
+        <label>שם פרטי:</label>
+        <input type="text" [formControl]="firstNameControl">
+        <span *ngIf="firstNameControl.errors?.required && firstNameControl.touched">Missing First Name.</span>
+        <span *ngIf="firstNameControl.errors?.pattern && firstNameControl.touched">First Name must start with a capital latter.</span>
+
+        <label>שם משפחה:</label>
+        <input type="text" [formControl]="lastNameControl">
+        <span *ngIf="lastNameControl.errors?.required && lastNameControl.touched">Missing First Name.</span>
+        <span *ngIf="lastNameControl.errors?.pattern && lastNameControl.touched">First Name must start with a capital latter.</span>
+
+        <label>טייטל:</label>
+        <input type="text" [formControl]="titleControl">
+        <span *ngIf="titleControl.errors?.required && titleControl.touched">Missing First Name.</span>
+        <span *ngIf="titleControl.errors?.pattern && titleControl.touched">First Name must start with a capital latter.</span>
+
+        <label>תאריך לידה:</label>
+        <input type="date" [formControl]="birthDateControl">
+        <span *ngIf="birthDateControl.invalid && birthDateControl.touched">Missing birthDate.</span>
+
+        <label>תמונה:</label>
+        <input type="file" [formControl]="imageControl" (change)="saveImage($event)">
+
+        <button [disabled]="employeeForm.invalid">Update</button>
+
+    </form>
+
+</div>

@@ -1,0 +1,5 @@
+<div>
+    <!-- <app-please-wait *ngIf="!employees"></app-please-wait> -->
+    <a routerLink="/employees/new">Add</a>
+    <app-employee-card *ngFor="let e of employees" [employee]="e"></app-employee-card>
+</div>

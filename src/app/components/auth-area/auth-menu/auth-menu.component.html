@@ -1,0 +1,18 @@
+<div>
+
+    <ng-container *ngIf="!user">
+        <span>שלום אורח,</span>
+        <a routerLink="/login">התחבר</a>
+        <span> | </span>
+        <a routerLink="/register">הירשם</a>
+    </ng-container>
+
+    <ng-container *ngIf="user">
+        <span>שלום {{user.firstName}} {{user.lastName}}</span>
+        <span> | </span>
+        <a routerLink="/logout">תתנתק</a>
+        <span> | </span>
+        <a routerLink="/edit">ערוך</a>
+    </ng-container>
+
+</div>

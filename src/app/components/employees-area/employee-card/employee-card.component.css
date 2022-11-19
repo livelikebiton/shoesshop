@@ -1,0 +1,23 @@
+div {
+	width: 250px;
+    height: 300px;
+    background-color: lightblue;
+    border-radius: 10px;
+    text-align: center;
+}
+
+p {
+    margin: 5px;
+}
+
+img {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+a {
+    padding: 5px;
+    color: black;
+}
